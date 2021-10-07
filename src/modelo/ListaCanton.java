@@ -22,7 +22,7 @@ public class ListaCanton {
         this.canList = canList;
     }
 
-    @XmlElement(name = "canton")
+    @XmlElement(name = "cantones")
     public List<ModeloCanton> getCanList() {
         return canList;
     }

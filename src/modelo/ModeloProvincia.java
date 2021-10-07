@@ -38,9 +38,17 @@ public class ModeloProvincia {
         this.canList = canList;
     }
 
+//    @Override
+//    public String toString() {
+//        return "Provincia " + getNumero() + ": " + getNombre() + "\n";
+//    }
+
     @Override
     public String toString() {
-        return "Provincia " + getNumero() + ": " + getNombre() + "\n";
+        return "ModeloProvincia{" +
+                "numero=" + numero +
+                ", nombre='" + nombre + '\'' +
+                ", canList=" + canList +
+                '}';
     }
-
 }

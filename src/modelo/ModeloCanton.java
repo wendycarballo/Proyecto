@@ -26,9 +26,18 @@ public class ModeloCanton {
 
     public void setDistList(ListaDistrito distList) { this.distList = distList; }
 
+//    @Override
+//    public String toString() {
+//        return "Canton " + getNumero() + ": " + getNombre() + "\n";
+//    }
+
+
     @Override
     public String toString() {
-        return "Canton " + getNumero() + ": " + getNombre() + "\n";
+        return "ModeloCanton{" +
+                "numero=" + numero +
+                ", nombre='" + nombre + '\'' +
+                ", distList=" + distList +
+                '}';
     }
-
 }

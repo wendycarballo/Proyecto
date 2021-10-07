@@ -5,7 +5,7 @@ import modelo.*;
 public class Principal {
     public static void main(String[] args) {
 
-        System.out.println("Hola Gian");
+//        System.out.println("Hola Gian");
 
         ModeloDistrito d = new ModeloDistrito(1,"San Ramon");
         ListaDistrito ld = new ListaDistrito();

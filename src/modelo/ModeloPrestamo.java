@@ -64,4 +64,11 @@ public class ModeloPrestamo {
                 + "Pagos realizados:\n" + getPagoList();
     }
 
+    public void agregarPago(String fecha, double monto){
+        for(ModeloPago element : pagoList.getListaPago()){
+
+        }
+
+    }
+
 }

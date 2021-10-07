@@ -8,7 +8,7 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
 import java.util.List;
 
-@XmlRootElement(name = "provincias")
+@XmlRootElement(name = "data")
 @XmlAccessorType(XmlAccessType.PROPERTY)
 
 public class ListaProvincia {
@@ -22,7 +22,7 @@ public class ListaProvincia {
         this.provList = provList;
     }
 
-    @XmlElement(name = "provincia")
+    @XmlElement(name = "provincias")
     public List<ModeloProvincia> getProvList() {
         return provList;
     }

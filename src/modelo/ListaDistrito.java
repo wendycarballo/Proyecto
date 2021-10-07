@@ -22,7 +22,7 @@ public class ListaDistrito {
         this.distList = distList;
     }
 
-    @XmlElement(name = "distrito")
+    @XmlElement(name = "distritos")
     public List<ModeloDistrito> getDistList() {
         return distList;
     }
