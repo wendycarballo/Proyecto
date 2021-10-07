@@ -6,11 +6,12 @@ import java.awt.event.ActionListener;
 
 public class VistaCliente extends JFrame {
     JPanel panelA = new JPanel(new BorderLayout());
-    JPanel norte = new JPanel(new FlowLayout());
+    JPanel norte = new JPanel(new GridLayout(2,2));
     JPanel centro = new JPanel();
     JPanel sur = new JPanel(new FlowLayout());
     JPanel mapa = new JPanel();//hacer
-    JPanel panelInfo = new JPanel(new GridLayout(6,2));
+    JPanel panelBusq = new JPanel(new FlowLayout());
+    JPanel panelInfo = new JPanel(new FlowLayout());
     JPanel panelDirect = new JPanel(new FlowLayout());
 
     JTextField espacioId, espacioNombre, provincia;
@@ -60,7 +61,7 @@ public class VistaCliente extends JFrame {
     public VistaCliente() throws HeadlessException {
         super("Clientes");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        setSize(850,700);
+        setSize(850,650);
         setBackground(Color.BLUE);
         setResizable(false);
         agregarComponentes(getContentPane());
@@ -69,11 +70,11 @@ public class VistaCliente extends JFrame {
 
     public void agregarComponentes(Container contentPane) {
 
-        panelInfo.add(new JLabel("Cedula:"));
+        panelBusq.add(new JLabel("Cedula:"));
         espacioId = new JTextField();
         espacioId.setPreferredSize(new Dimension(150,25));
         espacioId.setToolTipText("Introduzca numero de cedula");
-        panelInfo.add(espacioId);
+        panelBusq.add(espacioId);
 
         panelInfo.add(new JLabel("Nombre:"));
         espacioNombre = new JTextField();
@@ -114,7 +115,7 @@ public class VistaCliente extends JFrame {
         boton1 = new JButton("Buscar");
         boton1.setPreferredSize(new Dimension(75,25));
         boton1.setActionCommand("1");
-        panelInfo.add(boton1);
+        panelBusq.add(boton1);
 
         boton2 = new JButton("Agregar");
         boton2.setPreferredSize(new Dimension(100,25));
@@ -128,6 +129,7 @@ public class VistaCliente extends JFrame {
 
         centro.add(panelDirect);
         centro.add(mapa);
+        norte.add(panelBusq);
         norte.add(panelInfo);
         panelA.add(norte, BorderLayout.NORTH);
         panelA.add(centro, BorderLayout.CENTER);

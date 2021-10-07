@@ -8,17 +8,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ControladorPago {
-    ModeloPago modelPag;
-    VistaPago viewPag;
+    ModeloPago modeloPago;
+    VistaPago pago;
 
     public ControladorPago() {
-        this.modelPag = new ModeloPago();
-        this.viewPag = new VistaPago();
+        this.modeloPago = new ModeloPago();
+        this.pago = new VistaPago();
 //        JTable jtXML = tablaXML();
 //        jtXML.setBounds(30, 40, 100, 100);
 //        JScrollPane sp = new JScrollPane(jtXML);
-//        viewPag.agregaTabla(sp);
-        //viewPag.agregarListener(new ControladorPrestamo().ClaseAction());
+//        pago.agregaTabla(sp);
+        pago.agregarListener(new ControladorPago.ClaseAction());
     }
 
 //    private JTable tablaXML() {
@@ -33,7 +33,7 @@ public class ControladorPago {
             int valor = Integer.parseInt(e.getActionCommand());
             switch (valor){
                 case 1: //regresar
-                    viewPag.setVisible(false);
+                    pago.setVisible(false);
                     new ControladorPrincipal();
                     break;
             }

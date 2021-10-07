@@ -9,17 +9,17 @@ import java.awt.event.ActionListener;
 
 public class ControladorPrestamo {
 
-    ModeloPrestamo modelPrest;
-    VistaPrestamo viewPrest;
+    ModeloPrestamo modeloPrestamo;
+    VistaPrestamo prestamo;
 
     public ControladorPrestamo() {
-        this.modelPrest = new ModeloPrestamo();
-        this.viewPrest = new VistaPrestamo();
+        this.modeloPrestamo = new ModeloPrestamo();
+        this.prestamo = new VistaPrestamo();
         //JTable jtXML = tablaXML();
         //jtXML.setBounds(30, 40, 100, 100);
         //JScrollPane sp = new JScrollPane(jtXML);
-        //viewPrest.agregaTabla(sp);
-        //viewPrest.agregarListener(new ControladorPrestamo().ClaseAction());
+        //prestamo.agregaTabla(sp);
+        prestamo.agregarListener(new ControladorPrestamo.ClaseAction());
     }
 
 //    private JTable tablaXML() {
@@ -34,7 +34,7 @@ public class ControladorPrestamo {
             int valor = Integer.parseInt(e.getActionCommand());
             switch (valor){
                 case 1: //regresar
-                    viewPrest.setVisible(false);
+                    prestamo.setVisible(false);
                     new ControladorPrincipal();
                     break;
             }
