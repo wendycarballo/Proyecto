@@ -14,7 +14,6 @@ public class VistaPrincipal extends JFrame {
         panel.setLayout(new BorderLayout());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(400,210);
-        setBackground(Color.BLACK);
         setLocationRelativeTo(null);
         setResizable(false);
         agregarComponentes();
@@ -43,6 +42,10 @@ public class VistaPrincipal extends JFrame {
         boton3 = new JButton("Pagos");
         boton3.setActionCommand("3");
         boton3.setPreferredSize(new Dimension(200,50));
+
+        norte.setBackground(Color.darkGray);
+        centro.setBackground(Color.darkGray);
+        sur.setBackground(Color.darkGray);
 
         norte.add(boton1);
         centro.add(boton2);

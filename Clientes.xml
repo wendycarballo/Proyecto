@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<clientes>
+    <cliente>
+        <id>1</id>
+        <nombre>Juan</nombre>
+        <direccion>
+            <cantonS>San Ramon</cantonS>
+            <distritoS>San Ramon</distritoS>
+            <provinciaS>Alajuela</provinciaS>
+        </direccion>
+        <prestamo>
+            <prestamo>
+                <interes>10.0</interes>
+                <monto>100000</monto>
+                <pagoList>
+                    <pago>
+                        <fecha>junio 2020</fecha>
+                        <montoCancelado>30000.0</montoCancelado>
+                        <numeroCuota>1</numeroCuota>
+                    </pago>
+                    <pago>
+                        <fecha>julio 2020</fecha>
+                        <montoCancelado>30000.0</montoCancelado>
+                        <numeroCuota>2</numeroCuota>
+                    </pago>
+                </pagoList>
+                <plazo>12</plazo>
+            </prestamo>
+            <prestamo>
+                <interes>10.0</interes>
+                <monto>500000</monto>
+                <pagoList>
+                    <pago>
+                        <fecha>enero 2020</fecha>
+                        <montoCancelado>80000.0</montoCancelado>
+                        <numeroCuota>4</numeroCuota>
+                    </pago>
+                    <pago>
+                        <fecha>febrero 2020</fecha>
+                        <montoCancelado>80000.0</montoCancelado>
+                        <numeroCuota>5</numeroCuota>
+                    </pago>
+                </pagoList>
+                <plazo>12</plazo>
+            </prestamo>
+        </prestamo>
+    </cliente>
+    <cliente>
+        <id>2</id>
+        <nombre>Ana</nombre>
+        <direccion>
+            <cantonS>San Ramon</cantonS>
+            <distritoS>Santiago</distritoS>
+            <provinciaS>Alajuela</provinciaS>
+        </direccion>
+        <prestamo>
+            <prestamo>
+                <interes>10.0</interes>
+                <monto>100000</monto>
+                <pagoList>
+                    <pago>
+                        <fecha>septiembre 2021</fecha>
+                        <montoCancelado>30000.0</montoCancelado>
+                        <numeroCuota>1</numeroCuota>
+                    </pago>
+                    <pago>
+                        <fecha>octubre 2021</fecha>
+                        <montoCancelado>30000.0</montoCancelado>
+                        <numeroCuota>2</numeroCuota>
+                    </pago>
+                </pagoList>
+                <plazo>12</plazo>
+            </prestamo>
+        </prestamo>
+    </cliente>
+    <cliente>
+        <id>3</id>
+        <nombre>Maria</nombre>
+        <direccion>
+            <cantonS>San Ramon</cantonS>
+            <distritoS>San Juan</distritoS>
+            <provinciaS>Alajuela</provinciaS>
+        </direccion>
+        <prestamo>
+            <prestamo>
+                <interes>10.0</interes>
+                <monto>100000</monto>
+                <pagoList>
+                    <pago>
+                        <fecha>octubre 2021</fecha>
+                        <montoCancelado>50000.0</montoCancelado>
+                        <numeroCuota>1</numeroCuota>
+                    </pago>
+                </pagoList>
+                <plazo>12</plazo>
+            </prestamo>
+        </prestamo>
+    </cliente>
+    <cliente>
+        <id>4</id>
+        <nombre>Marta</nombre>
+        <direccion>
+            <cantonS>San Ramon</cantonS>
+            <distritoS>Piedades Norte</distritoS>
+            <provinciaS>Alajuela</provinciaS>
+        </direccion>
+        <prestamo>
+            <prestamo>
+                <interes>10.0</interes>
+                <monto>100000</monto>
+                <pagoList>
+                    <pago>
+                        <fecha>septiembre 2021</fecha>
+                        <montoCancelado>30000.0</montoCancelado>
+                        <numeroCuota>1</numeroCuota>
+                    </pago>
+                    <pago>
+                        <fecha>octubre 2021</fecha>
+                        <montoCancelado>30000.0</montoCancelado>
+                        <numeroCuota>2</numeroCuota>
+                    </pago>
+                </pagoList>
+                <plazo>12</plazo>
+            </prestamo>
+        </prestamo>
+    </cliente>
+    <cliente>
+        <id>5</id>
+        <nombre>Daniel</nombre>
+        <direccion>
+            <cantonS>FA</cantonS>
+            <distritoS>ULT</distritoS>
+            <provinciaS>DE</provinciaS>
+        </direccion>
+        <prestamo/>
+    </cliente>
+</clientes>

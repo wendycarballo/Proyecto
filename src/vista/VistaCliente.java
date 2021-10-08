@@ -18,7 +18,7 @@ public class VistaCliente extends JFrame {
 
     JComboBox canton, distrito;
 
-    JButton boton1, boton2, boton3;
+    JButton boton1, boton2, boton3, boton4;
 
     public void displayMessage(String message){
         JOptionPane.showMessageDialog(this,message);
@@ -56,13 +56,13 @@ public class VistaCliente extends JFrame {
         boton1.addActionListener(al);
         boton2.addActionListener(al);
         boton3.addActionListener(al);
+        boton4.addActionListener(al);
     }
 
     public VistaCliente() throws HeadlessException {
         super("Clientes");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setSize(850,650);
-        setBackground(Color.BLUE);
         setResizable(false);
         agregarComponentes(getContentPane());
         setVisible(true);
@@ -122,10 +122,15 @@ public class VistaCliente extends JFrame {
         boton2.setActionCommand("2");
         panelDirect.add(boton2);
 
-        boton3 = new JButton("Regresar");
-        boton3.setPreferredSize(new Dimension(150,25));
+        boton3 = new JButton("Lista");
+        boton3.setPreferredSize(new Dimension(100,25));
         boton3.setActionCommand("3");
         sur.add(boton3);
+
+        boton4 = new JButton("Regresar");
+        boton4.setPreferredSize(new Dimension(150,25));
+        boton4.setActionCommand("4");
+        sur.add(boton4);
 
         centro.add(panelDirect);
         centro.add(mapa);

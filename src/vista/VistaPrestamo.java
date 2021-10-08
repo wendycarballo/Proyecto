@@ -21,7 +21,6 @@ public class VistaPrestamo extends JFrame {
         super("Prestamos del cliente");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setSize(700,700);
-        setBackground(Color.BLUE);
         setResizable(false);
         agregarComponentes(getContentPane());
         setVisible(true);

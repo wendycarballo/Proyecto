@@ -1,49 +1,48 @@
 package modelo;
 
 public class Direccion {
-    private ModeloProvincia provincia;
-    private ModeloCanton canton;
-    private ModeloDistrito distrito;
+    private String provinciaS;
+    private String cantonS;
+    private String distritoS;
 
     public Direccion() {
     }
 
-    public Direccion(ModeloProvincia provincia, ModeloCanton canton, ModeloDistrito distrito) {
-        this.provincia = provincia;
-        this.canton = canton;
-        this.distrito = distrito;
+    public Direccion(String provinciaS, String cantonS, String distritoS) {
+        this.provinciaS = provinciaS;
+        this.cantonS = cantonS;
+        this.distritoS = distritoS;
     }
 
-    public ModeloProvincia getProvincia() {
-        return provincia;
+    public String getProvinciaS() {
+        return provinciaS;
     }
 
-    public void setProvincia(ModeloProvincia provincia) {
-        this.provincia = provincia;
+    public void setProvinciaS(String provinciaS) {
+        this.provinciaS = provinciaS;
     }
 
-    public ModeloCanton getCanton() {
-        return canton;
+    public String getCantonS() {
+        return cantonS;
     }
 
-    public void setCanton(ModeloCanton canton) {
-        this.canton = canton;
+    public void setCantonS(String cantonS) {
+        this.cantonS = cantonS;
     }
 
-    public ModeloDistrito getDistrito() {
-        return distrito;
+    public String getDistritoS() {
+        return distritoS;
     }
 
-    public void setDistrito(ModeloDistrito distrito) {
-        this.distrito = distrito;
+    public void setDistritoS(String distritoS) {
+        this.distritoS = distritoS;
     }
 
     @Override
     public String toString() {
-        return "Direccion del cliente:\n" +
-                getProvincia() +
-                getCanton()+
-                getDistrito();
+        return getProvinciaS() + "," +
+                getCantonS() + "," +
+                getDistritoS();
     }
 
 }

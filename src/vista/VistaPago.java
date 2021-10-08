@@ -21,7 +21,6 @@ public class VistaPago extends JFrame {
         super("Pagos del prestamo");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setSize(700,700);
-        setBackground(Color.BLUE);
         setResizable(false);
         agregarComponentes(getContentPane());
         setVisible(true);
