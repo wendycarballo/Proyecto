@@ -31,15 +31,15 @@ public class VistaPrincipal extends JFrame {
         norte = new JPanel(new FlowLayout());
         centro = new JPanel(new FlowLayout());
 
-        boton1 = new JButton("Clientes");
+        boton1 = new JButton("Gestion clientes");
         boton1.setActionCommand("1");
         boton1.setPreferredSize(new Dimension(200,50));
 
-        boton2 = new JButton("Prestamos");
+        boton2 = new JButton("Nuevo Prestamo");
         boton2.setActionCommand("2");
         boton2.setPreferredSize(new Dimension(200,50));
 
-        boton3 = new JButton("Pagos");
+        boton3 = new JButton("Realizar pago");
         boton3.setActionCommand("3");
         boton3.setPreferredSize(new Dimension(200,50));
 

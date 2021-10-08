@@ -1,5 +1,6 @@
 package principal;
 
+import controlador.ControladorListaPrestamo;
 import controlador.ControladorPrincipal;
 import modelo.*;
 
@@ -8,7 +9,8 @@ public class Principal {
 
 //        System.out.println("Hola Gian");
 
-        new ControladorPrincipal();
+        //new ControladorPrincipal();
+        new ControladorListaPrestamo();
 
 //        ModeloDistrito d1 = new ModeloDistrito(1,"San Ramon");
 //        ModeloDistrito d2 = new ModeloDistrito(2,"Santiago");

@@ -26,7 +26,7 @@ public class VistaListaCliente extends JFrame {
     }
 
     public VistaListaCliente() throws HeadlessException {
-        super("Lista de clientes");
+        super("Informacion de clientes");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setSize(600,600);
         setResizable(false);

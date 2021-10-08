@@ -18,7 +18,7 @@ public class VistaPago extends JFrame {
     }
 
     public VistaPago() throws HeadlessException {
-        super("Pagos del prestamo");
+        super("Pagos de prestamos");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setSize(700,700);
         setResizable(false);
