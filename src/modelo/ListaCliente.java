@@ -1,7 +1,5 @@
 package modelo;
 
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
@@ -9,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @XmlRootElement(name = "clientes")
-@XmlAccessorType(XmlAccessType.PROPERTY)
 
 public class ListaCliente {
     List<ModeloCliente> listaCliente;
@@ -35,4 +32,10 @@ public class ListaCliente {
         this.listaCliente = listaCliente;
     }
 
+    @Override
+    public String toString() {
+        return "ListaCliente{" +
+                "listaCliente=" + listaCliente +
+                '}';
+    }
 }

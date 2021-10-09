@@ -9,40 +9,40 @@
             <provinciaS>Alajuela</provinciaS>
         </direccion>
         <prestamo>
-            <prestamo>
+            <listaPrestamo>
                 <interes>10.0</interes>
                 <monto>100000</monto>
                 <pagoList>
-                    <pago>
+                    <listaPago>
                         <fecha>junio 2020</fecha>
                         <montoCancelado>30000.0</montoCancelado>
                         <numeroCuota>1</numeroCuota>
-                    </pago>
-                    <pago>
+                    </listaPago>
+                    <listaPago>
                         <fecha>julio 2020</fecha>
                         <montoCancelado>30000.0</montoCancelado>
                         <numeroCuota>2</numeroCuota>
-                    </pago>
+                    </listaPago>
                 </pagoList>
                 <plazo>12</plazo>
-            </prestamo>
-            <prestamo>
+            </listaPrestamo>
+            <listaPrestamo>
                 <interes>10.0</interes>
                 <monto>500000</monto>
                 <pagoList>
-                    <pago>
+                    <listaPago>
                         <fecha>enero 2020</fecha>
                         <montoCancelado>80000.0</montoCancelado>
                         <numeroCuota>4</numeroCuota>
-                    </pago>
-                    <pago>
+                    </listaPago>
+                    <listaPago>
                         <fecha>febrero 2020</fecha>
                         <montoCancelado>80000.0</montoCancelado>
                         <numeroCuota>5</numeroCuota>
-                    </pago>
+                    </listaPago>
                 </pagoList>
                 <plazo>12</plazo>
-            </prestamo>
+            </listaPrestamo>
         </prestamo>
     </cliente>
     <cliente>
@@ -54,23 +54,23 @@
             <provinciaS>Alajuela</provinciaS>
         </direccion>
         <prestamo>
-            <prestamo>
+            <listaPrestamo>
                 <interes>10.0</interes>
                 <monto>100000</monto>
                 <pagoList>
-                    <pago>
+                    <listaPago>
                         <fecha>septiembre 2021</fecha>
                         <montoCancelado>30000.0</montoCancelado>
                         <numeroCuota>1</numeroCuota>
-                    </pago>
-                    <pago>
+                    </listaPago>
+                    <listaPago>
                         <fecha>octubre 2021</fecha>
                         <montoCancelado>30000.0</montoCancelado>
                         <numeroCuota>2</numeroCuota>
-                    </pago>
+                    </listaPago>
                 </pagoList>
                 <plazo>12</plazo>
-            </prestamo>
+            </listaPrestamo>
         </prestamo>
     </cliente>
     <cliente>
@@ -82,18 +82,18 @@
             <provinciaS>Alajuela</provinciaS>
         </direccion>
         <prestamo>
-            <prestamo>
+            <listaPrestamo>
                 <interes>10.0</interes>
                 <monto>100000</monto>
                 <pagoList>
-                    <pago>
+                    <listaPago>
                         <fecha>octubre 2021</fecha>
                         <montoCancelado>50000.0</montoCancelado>
                         <numeroCuota>1</numeroCuota>
-                    </pago>
+                    </listaPago>
                 </pagoList>
                 <plazo>12</plazo>
-            </prestamo>
+            </listaPrestamo>
         </prestamo>
     </cliente>
     <cliente>
@@ -105,33 +105,23 @@
             <provinciaS>Alajuela</provinciaS>
         </direccion>
         <prestamo>
-            <prestamo>
+            <listaPrestamo>
                 <interes>10.0</interes>
                 <monto>100000</monto>
                 <pagoList>
-                    <pago>
+                    <listaPago>
                         <fecha>septiembre 2021</fecha>
                         <montoCancelado>30000.0</montoCancelado>
                         <numeroCuota>1</numeroCuota>
-                    </pago>
-                    <pago>
+                    </listaPago>
+                    <listaPago>
                         <fecha>octubre 2021</fecha>
                         <montoCancelado>30000.0</montoCancelado>
                         <numeroCuota>2</numeroCuota>
-                    </pago>
+                    </listaPago>
                 </pagoList>
                 <plazo>12</plazo>
-            </prestamo>
+            </listaPrestamo>
         </prestamo>
-    </cliente>
-    <cliente>
-        <id>5</id>
-        <nombre>Daniel</nombre>
-        <direccion>
-            <cantonS>FA</cantonS>
-            <distritoS>ULT</distritoS>
-            <provinciaS>DE</provinciaS>
-        </direccion>
-        <prestamo/>
     </cliente>
 </clientes>

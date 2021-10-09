@@ -1,5 +1,8 @@
 package modelo;
 
+import jakarta.xml.bind.annotation.XmlType;
+
+@XmlType(propOrder = {"numero","nombre"})
 public class ModeloDistrito {
     private int numero;
     private String nombre;
@@ -22,7 +25,7 @@ public class ModeloDistrito {
 
     @Override
     public String toString() {
-        return "Distrito " + getNumero() + ": " + getNombre() + "\n";
+        return "        Distrito " + getNumero() + ": " + getNombre() + "\n";
     }
 
 }

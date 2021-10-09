@@ -1,7 +1,5 @@
 package modelo;
 
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
@@ -9,36 +7,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 @XmlRootElement(name = "data")
-@XmlAccessorType(XmlAccessType.PROPERTY)
-
 public class ListaProvincia {
-    List<ModeloProvincia> provList;
+    List<ModeloProvincia> provincias;
 
     public ListaProvincia() {
-        provList = new ArrayList<>();
+        provincias = new ArrayList<>();
     }
 
-    public ListaProvincia(List<ModeloProvincia> provList) {
-        this.provList = provList;
+    public ListaProvincia(List<ModeloProvincia> provincias) {
+        this.provincias = provincias;
     }
 
     @XmlElement(name = "provincias")
-    public List<ModeloProvincia> getProvList() {
-        return provList;
+    public List<ModeloProvincia> getProvincias() {
+        return provincias;
     }
 
-    public void setProvList(List<ModeloProvincia> provList) {
-        this.provList = provList;
+    public void setProvincias(List<ModeloProvincia> provincias) {
+        this.provincias = provincias;
     }
 
     public void add(ModeloProvincia provincia){
-        provList.add(provincia);
+        provincias.add(provincia);
     }
 
     @Override
     public String toString() {
-        return "ListaProvincia{" +
-                "provList=" + provList +
-                '}';
+        return "Lista Provincias: \n" + getProvincias();
     }
 }

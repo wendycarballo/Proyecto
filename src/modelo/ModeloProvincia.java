@@ -1,17 +1,20 @@
 package modelo;
 
+import jakarta.xml.bind.annotation.XmlType;
+
+@XmlType(propOrder = {"numero","nombre","cantones"})
 public class ModeloProvincia {
     private int numero;
     private String nombre;
-    private ListaCanton canList;
+    private ListaCanton cantones;
 
     public ModeloProvincia() {
     }
 
-    public ModeloProvincia(int numero, String nombre, ListaCanton canList) {
+    public ModeloProvincia(int numero, String nombre, ListaCanton cantones) {
         this.numero = numero;
         this.nombre = nombre;
-        this.canList = canList;
+        this.cantones = cantones;
     }
 
     public int getNumero() {
@@ -30,25 +33,18 @@ public class ModeloProvincia {
         this.nombre = nombre;
     }
 
-    public ListaCanton getCanList() {
-        return canList;
+    public ListaCanton getCantones() {
+        return cantones;
     }
 
-    public void setCanList(ListaCanton canList) {
-        this.canList = canList;
+    public void setCantones(ListaCanton cantones) {
+        this.cantones = cantones;
     }
-
-//    @Override
-//    public String toString() {
-//        return "Provincia " + getNumero() + ": " + getNombre() + "\n";
-//    }
 
     @Override
     public String toString() {
-        return "ModeloProvincia{" +
-                "numero=" + numero +
-                ", nombre='" + nombre + '\'' +
-                ", canList=" + canList +
-                '}';
+        return "Provincia " + getNumero() + ": " + getNombre() + "\n"
+        + getCantones() + "\n";
     }
+
 }

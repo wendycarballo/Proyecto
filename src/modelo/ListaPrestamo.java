@@ -1,16 +1,11 @@
 package modelo;
 
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@XmlRootElement(name = "prestamos")
-@XmlAccessorType(XmlAccessType.PROPERTY)
-
+@XmlRootElement
 public class ListaPrestamo {
     List<ModeloPrestamo> prestList;
 
@@ -26,7 +21,7 @@ public class ListaPrestamo {
         this.prestList = prestList;
     }
 
-    @XmlElement(name = "prestamo")
+    @XmlElement
     public List<ModeloPrestamo> getListaPrestamo() {
         return prestList;
     }

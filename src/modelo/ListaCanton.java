@@ -1,44 +1,37 @@
 package modelo;
 
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@XmlRootElement(name = "cantones")
-@XmlAccessorType(XmlAccessType.PROPERTY)
-
+@XmlRootElement
 public class ListaCanton {
-    List<ModeloCanton> canList;
+    List<ModeloCanton> cantones;
 
     public ListaCanton() {
-        canList = new ArrayList<>();
+        cantones = new ArrayList<>();
     }
 
-    public ListaCanton(List<ModeloCanton> canList) {
-        this.canList = canList;
+    public ListaCanton(List<ModeloCanton> cantones) {
+        this.cantones = cantones;
     }
 
-    @XmlElement(name = "cantones")
-    public List<ModeloCanton> getCanList() {
-        return canList;
+    //@XmlElement
+    public List<ModeloCanton> getCantones() {
+        return cantones;
     }
 
-    public void setCanList(List<ModeloCanton> canList) {
-        this.canList = canList;
+    public void setCantones(List<ModeloCanton> cantones) {
+        this.cantones = cantones;
     }
 
     public void add(ModeloCanton canton){
-        canList.add(canton);
+        cantones.add(canton);
     }
 
     @Override
     public String toString() {
-        return "ListaCanton{" +
-                "canList=" + canList +
-                '}';
+        return "->" + getCantones();
     }
 }

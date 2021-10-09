@@ -1,16 +1,26 @@
 package principal;
 
+import controlador.ControladorListaCliente;
 import controlador.ControladorListaPrestamo;
 import controlador.ControladorPrincipal;
 import modelo.*;
 
+import javax.swing.*;
+
 public class Principal {
     public static void main(String[] args) {
 
-//        System.out.println("Hola Gian");
+//        JAXBParser parser = new JAXBParser();
+//        ListaCliente clientes = (ListaCliente) parser.unmarshall(new ListaCliente(), "Clientes.xml");
+//
+//        System.out.println(clientes);
 
-        //new ControladorPrincipal();
-        new ControladorListaPrestamo();
+        JAXBParser parser = new JAXBParser();
+        ListaProvincia provincias = (ListaProvincia) parser.unmarshall(new ListaProvincia(), "ProvinciasAnidadas1.xml");
+
+        System.out.println(provincias);
+
+        //----------------------------------------------------------------------------------
 
 //        ModeloDistrito d1 = new ModeloDistrito(1,"San Ramon");
 //        ModeloDistrito d2 = new ModeloDistrito(2,"Santiago");
@@ -80,8 +90,6 @@ public class Principal {
 //
 //        JAXBParser parser = new JAXBParser();
 //        parser.marshall(clientes,"Clientes.xml");
-
-//        System.out.println(cli1);
 
     }
 }

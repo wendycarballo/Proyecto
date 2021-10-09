@@ -1,17 +1,20 @@
 package modelo;
 
+import jakarta.xml.bind.annotation.XmlType;
+
+@XmlType(propOrder = {"numero","nombre","distritos"})
 public class ModeloCanton {
     private int numero;
     private String nombre;
-    private ListaDistrito distList;
+    private ListaDistrito distritos;
 
     public ModeloCanton() {
     }
 
-    public ModeloCanton(int numero, String nombre, ListaDistrito distList) {
+    public ModeloCanton(int numero, String nombre, ListaDistrito distritos) {
         this.numero = numero;
         this.nombre = nombre;
-        this.distList = distList;
+        this.distritos = distritos;
     }
 
     public int getNumero() { return numero; }
@@ -22,22 +25,14 @@ public class ModeloCanton {
 
     public void setNombre(String nombre) { this.nombre = nombre; }
 
-    public ListaDistrito getDistList() { return distList; }
+    public ListaDistrito getDistritos() { return distritos; }
 
-    public void setDistList(ListaDistrito distList) { this.distList = distList; }
-
-//    @Override
-//    public String toString() {
-//        return "Canton " + getNumero() + ": " + getNombre() + "\n";
-//    }
-
+    public void setDistritos(ListaDistrito distritos) { this.distritos = distritos; }
 
     @Override
     public String toString() {
-        return "ModeloCanton{" +
-                "numero=" + numero +
-                ", nombre='" + nombre + '\'' +
-                ", distList=" + distList +
-                '}';
+        return "    Canton " + getNumero() + ": " + getNombre() + "\n"
+                + getDistritos();
     }
+
 }

@@ -1,45 +1,39 @@
 package modelo;
 
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@XmlRootElement(name = "distritos")
-@XmlAccessorType(XmlAccessType.PROPERTY)
-
+@XmlRootElement
 public class ListaDistrito {
-    List<ModeloDistrito> distList;
+    List<ModeloDistrito> distritos;
 
     public ListaDistrito() {
-        distList = new ArrayList<>();
+        distritos = new ArrayList<>();
     }
 
-    public ListaDistrito(List<ModeloDistrito> distList) {
-        this.distList = distList;
+    public ListaDistrito(List<ModeloDistrito> distritos) {
+        this.distritos = distritos;
     }
 
-    @XmlElement(name = "distritos")
-    public List<ModeloDistrito> getDistList() {
-        return distList;
+    //@XmlElement
+    public List<ModeloDistrito> getDistritos() {
+        return distritos;
     }
 
-    public void setDistList(List<ModeloDistrito> distList) {
-        this.distList = distList;
+    public void setDistritos(List<ModeloDistrito> distritos) {
+        this.distritos = distritos;
     }
 
     public void add(ModeloDistrito distrito){
-        distList.add(distrito);
+        distritos.add(distrito);
     }
 
     @Override
     public String toString() {
-        return "ListaDistrito{" +
-                "distList=" + distList +
-                '}';
+        return "->" + getDistritos();
     }
 
 }
