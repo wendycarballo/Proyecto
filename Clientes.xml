@@ -15,24 +15,24 @@
                 <pagoList>
                     <listaPago>
                         <fecha>junio 2020</fecha>
-                        <montoCancelado>30000.0</montoCancelado>
+                        <montoCancelado>60000.0</montoCancelado>
                         <numeroCuota>1</numeroCuota>
                     </listaPago>
                     <listaPago>
                         <fecha>julio 2020</fecha>
-                        <montoCancelado>30000.0</montoCancelado>
+                        <montoCancelado>20000.0</montoCancelado>
                         <numeroCuota>2</numeroCuota>
                     </listaPago>
                 </pagoList>
-                <plazo>12</plazo>
+                <plazo>6</plazo>
             </listaPrestamo>
             <listaPrestamo>
-                <interes>10.0</interes>
-                <monto>500000</monto>
+                <interes>15.0</interes>
+                <monto>1100000</monto>
                 <pagoList>
                     <listaPago>
                         <fecha>enero 2020</fecha>
-                        <montoCancelado>80000.0</montoCancelado>
+                        <montoCancelado>40000.0</montoCancelado>
                         <numeroCuota>4</numeroCuota>
                     </listaPago>
                     <listaPago>
@@ -41,7 +41,7 @@
                         <numeroCuota>5</numeroCuota>
                     </listaPago>
                 </pagoList>
-                <plazo>12</plazo>
+                <plazo>24</plazo>
             </listaPrestamo>
         </prestamo>
     </cliente>
@@ -55,12 +55,12 @@
         </direccion>
         <prestamo>
             <listaPrestamo>
-                <interes>10.0</interes>
-                <monto>100000</monto>
+                <interes>12.0</interes>
+                <monto>200000</monto>
                 <pagoList>
                     <listaPago>
                         <fecha>septiembre 2021</fecha>
-                        <montoCancelado>30000.0</montoCancelado>
+                        <montoCancelado>20000.0</montoCancelado>
                         <numeroCuota>1</numeroCuota>
                     </listaPago>
                     <listaPago>
@@ -83,8 +83,8 @@
         </direccion>
         <prestamo>
             <listaPrestamo>
-                <interes>10.0</interes>
-                <monto>100000</monto>
+                <interes>8.0</interes>
+                <monto>300000</monto>
                 <pagoList>
                     <listaPago>
                         <fecha>octubre 2021</fecha>
@@ -106,12 +106,12 @@
         </direccion>
         <prestamo>
             <listaPrestamo>
-                <interes>10.0</interes>
-                <monto>100000</monto>
+                <interes>12.0</interes>
+                <monto>200000</monto>
                 <pagoList>
                     <listaPago>
                         <fecha>septiembre 2021</fecha>
-                        <montoCancelado>30000.0</montoCancelado>
+                        <montoCancelado>20000.0</montoCancelado>
                         <numeroCuota>1</numeroCuota>
                     </listaPago>
                     <listaPago>

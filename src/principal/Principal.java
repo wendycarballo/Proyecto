@@ -10,15 +10,17 @@ import javax.swing.*;
 public class Principal {
     public static void main(String[] args) {
 
+        new ControladorPrincipal();
+
 //        JAXBParser parser = new JAXBParser();
 //        ListaCliente clientes = (ListaCliente) parser.unmarshall(new ListaCliente(), "Clientes.xml");
 //
 //        System.out.println(clientes);
 
-        JAXBParser parser = new JAXBParser();
-        ListaProvincia provincias = (ListaProvincia) parser.unmarshall(new ListaProvincia(), "ProvinciasAnidadas1.xml");
-
-        System.out.println(provincias);
+//        JAXBParser parser = new JAXBParser();
+//        ListaProvincia provincias = (ListaProvincia) parser.unmarshall(new ListaProvincia(), "ProvinciasAnidadas1.xml");
+//
+//        System.out.println(provincias);
 
         //----------------------------------------------------------------------------------
 
@@ -41,19 +43,19 @@ public class Principal {
 //        Direccion dir3 = new Direccion(p.getNombre(),c.getNombre(),d3.getNombre());
 //        Direccion dir4 = new Direccion(p.getNombre(),c.getNombre(),d4.getNombre());
 //
-//        ModeloPago pag1 = new ModeloPago("junio 2020",1,30000);
-//        ModeloPago pag2 = new ModeloPago("julio 2020",2,30000);
+//        ModeloPago pag1 = new ModeloPago("junio 2020",1,60000);
+//        ModeloPago pag2 = new ModeloPago("julio 2020",2,20000);
 //        ListaPago lpag1 = new ListaPago();
 //        lpag1.add(pag1);
 //        lpag1.add(pag2);
 //
-//        ModeloPago pag3 = new ModeloPago("enero 2020",4,80000);
+//        ModeloPago pag3 = new ModeloPago("enero 2020",4,40000);
 //        ModeloPago pag4 = new ModeloPago("febrero 2020",5,80000);
 //        ListaPago lpag2 = new ListaPago();
 //        lpag2.add(pag3);
 //        lpag2.add(pag4);
 //
-//        ModeloPago pag5 = new ModeloPago("septiembre 2021",1,30000);
+//        ModeloPago pag5 = new ModeloPago("septiembre 2021",1,20000);
 //        ModeloPago pag6 = new ModeloPago("octubre 2021",2,30000);
 //        ListaPago lpag3 = new ListaPago();
 //        lpag3.add(pag5);
@@ -63,17 +65,17 @@ public class Principal {
 //        ListaPago lpag4 = new ListaPago();
 //        lpag4.add(pag7);
 //
-//        ModeloPrestamo pre1 = new ModeloPrestamo(100000,10,12,lpag1);
-//        ModeloPrestamo pre2 = new ModeloPrestamo(500000,10,12,lpag2);
+//        ModeloPrestamo pre1 = new ModeloPrestamo(100000,10,6,lpag1);
+//        ModeloPrestamo pre2 = new ModeloPrestamo(1100000,15,24,lpag2);
 //        ListaPrestamo lpre1 = new ListaPrestamo();
 //        lpre1.add(pre1);
 //        lpre1.add(pre2);
 //
-//        ModeloPrestamo pre3 = new ModeloPrestamo(100000,10,12,lpag3);
+//        ModeloPrestamo pre3 = new ModeloPrestamo(200000,12,12,lpag3);
 //        ListaPrestamo lpre2 = new ListaPrestamo();
 //        lpre2.add(pre3);
 //
-//        ModeloPrestamo pre4 = new ModeloPrestamo(100000,10,12,lpag4);
+//        ModeloPrestamo pre4 = new ModeloPrestamo(300000,8,12,lpag4);
 //        ListaPrestamo lpre3 = new ListaPrestamo();
 //        lpre3.add(pre4);
 //
