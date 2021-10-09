@@ -9,23 +9,10 @@ public class VistaListaPrestamo extends JFrame {
     JPanel norte = new JPanel(new GridLayout(2,2));
     JPanel centro = new JPanel();
     JPanel sur = new JPanel();
-    JPanel panelVerif = new JPanel(new FlowLayout());
     JPanel panelInfo = new JPanel(new FlowLayout());
     JPanel panelBase = new JPanel(new FlowLayout());
 
     JButton boton1, boton2;
-
-    JTextField espacioMonto, espacioId;
-
-    JComboBox interes, plazo;
-
-    int intereses[] = {2,3,5,10,12,15};
-
-    int plazos[] = {3,6,10,12,24,48};
-
-    public String getCapturaMonto(){ return espacioMonto.getText(); }
-
-    public String getCapturaId(){ return espacioId.getText(); }
 
     public void displayMessage(String message){
         JOptionPane.showMessageDialog(this,message);
@@ -37,7 +24,7 @@ public class VistaListaPrestamo extends JFrame {
     }
 
     public VistaListaPrestamo() throws HeadlessException {
-        super("Prestamos");
+        super("Lista Prestamos");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setSize(600,600);
         setResizable(false);
@@ -55,35 +42,9 @@ public class VistaListaPrestamo extends JFrame {
 
     public void agregarComponentes(Container contentPane) {
 
-        panelVerif.add(new JLabel("Cedula:"));
-        espacioId = new JTextField();
-        espacioId.setPreferredSize(new Dimension(150,25));
-        espacioId.setToolTipText("Introduzca numero de cedula");
-        panelVerif.add(espacioId);
+        panelInfo.add(new JLabel("PRESTAMOS DEL CLIENTE"));
 
-        panelInfo.add(new JLabel("Monto:"));
-        espacioMonto = new JTextField();
-        espacioMonto.setPreferredSize(new Dimension(150,25));
-        espacioMonto.setToolTipText("Introduzca un monto en colones");
-        panelInfo.add(espacioMonto);
-
-        panelInfo.add(new JLabel("Interes:"));
-        interes = new JComboBox();
-        interes.setPreferredSize(new Dimension(50,25));
-        for (int item : intereses) {
-            interes.addItem(item);
-        }
-        panelInfo.add(interes);
-
-        panelInfo.add(new JLabel("Plazo:"));
-        plazo = new JComboBox();
-        plazo.setPreferredSize(new Dimension(50,25));
-        for (int item : plazos) {
-            plazo.addItem(item);
-        }
-        panelInfo.add(plazo);
-
-        boton1 = new JButton("Agregar");
+        boton1 = new JButton("Pagos");
         boton1.setPreferredSize(new Dimension(100,25));
         boton1.setActionCommand("1");
         panelBase.add(boton1);
@@ -94,7 +55,6 @@ public class VistaListaPrestamo extends JFrame {
         panelBase.add(boton2);
 
         sur.add(panelBase);
-        norte.add(panelVerif);
         norte.add(panelInfo);
         panelA.add(norte, BorderLayout.NORTH);
         panelA.add(centro, BorderLayout.CENTER);

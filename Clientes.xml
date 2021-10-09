@@ -71,6 +71,11 @@
                 </pagoList>
                 <plazo>12</plazo>
             </listaPrestamo>
+            <listaPrestamo>
+                <interes>15.0</interes>
+                <monto>222000</monto>
+                <plazo>12</plazo>
+            </listaPrestamo>
         </prestamo>
     </cliente>
     <cliente>
@@ -92,6 +97,11 @@
                         <numeroCuota>1</numeroCuota>
                     </listaPago>
                 </pagoList>
+                <plazo>12</plazo>
+            </listaPrestamo>
+            <listaPrestamo>
+                <interes>15.0</interes>
+                <monto>333000</monto>
                 <plazo>12</plazo>
             </listaPrestamo>
         </prestamo>
@@ -120,6 +130,11 @@
                         <numeroCuota>2</numeroCuota>
                     </listaPago>
                 </pagoList>
+                <plazo>12</plazo>
+            </listaPrestamo>
+            <listaPrestamo>
+                <interes>15.0</interes>
+                <monto>444000</monto>
                 <plazo>12</plazo>
             </listaPrestamo>
         </prestamo>

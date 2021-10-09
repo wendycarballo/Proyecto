@@ -22,37 +22,38 @@ public class ControladorPrestamo {
         public void actionPerformed(ActionEvent e) {
             int valor = Integer.parseInt(e.getActionCommand());
             switch (valor){
-                case 1: //buscar
+                case 1: //agregar
                     try{
-                        if(!prestamoView.getCapturaId().isEmpty()) {
-                            JAXBParser parser = new JAXBParser();
-                            ListaCliente listaCli = (ListaCliente) parser.unmarshall(new ListaCliente(), "Clientes.xml");
-                            ModeloCliente cliente = new ModeloCliente();
-                            ListaPrestamo listaPre = new ListaPrestamo();
-                            ModeloPrestamo prestamo = new ModeloPrestamo();
-                            ListaPrestamo listaComodin = new ListaPrestamo();
-                            for(ModeloCliente element : listaCli.getListaCliente()){
+                        JAXBParser parser = new JAXBParser();
+                        ListaCliente listaCli = (ListaCliente) parser.unmarshall(new ListaCliente(), "Clientes.xml");
+                        if(!prestamoView.getCapturaId().isEmpty() && !prestamoView.getCapturaMonto().isEmpty()) {
+                            for(ModeloCliente element : listaCli.getListaCliente()) {
                                 if (element.getId() == Integer.parseInt(prestamoView.getCapturaId())) {
-                                    if(element.getPrestamo() != null){
-                                        for(ModeloPrestamo element1 : element.getPrestamo().getListaPrestamo()) {
-                                            listaComodin.add(element1);
-                                        }
-                                        JTable tabla = new JTable();
-                                        tabla.setModel(new ModeloTablaPrestamo(listaComodin.getListaPrestamo()));
-                                        JScrollPane sp = new JScrollPane(tabla);
-                                        prestamoView.setVisible(false);
-                                        ControladorListaPrestamo clp = new ControladorListaPrestamo();
-                                        clp.listaPView.agregaTabla(sp);
+                                    ModeloPrestamo prestamo = new ModeloPrestamo();
+                                    prestamo.setMonto(Integer.parseInt(prestamoView.getCapturaMonto()));
+                                    //CAMBIAR
+                                    prestamo.setInteres(15);
+                                    prestamo.setPlazo(12);
+                                    prestamo.setPagoList(null);
+                                    ListaPrestamo listaComodin = new ListaPrestamo();
+                                    for(ModeloPrestamo element1 : element.getPrestamo().getListaPrestamo()) {
+                                        listaComodin.add(element1);
                                     }
-                                    else{
-                                        throw new Exception("Sin prestamos registrados");
-                                    }
+                                    listaComodin.add(prestamo);
+                                    element.setPrestamo(listaComodin);
+
+                                    parser.marshall(listaCli,"Clientes.xml");
+                                    JTable tabla = new JTable();
+                                    tabla.setModel(new ModeloTablaPrestamo(listaComodin.getListaPrestamo()));
+                                    JScrollPane sp = new JScrollPane(tabla);
+                                    prestamoView.setVisible(false);
+                                    ControladorListaPrestamo clc = new ControladorListaPrestamo();
+                                    clc.listaPView.agregaTabla(sp);
                                 }
                             }
-                            //CREAR EXCEPCION SI NO ESTA
                         }
                         else{
-                            throw new Exception("Error, debe digitar un id");
+                            throw new Exception("Error, campos en blanco");
                         }
                     } catch (Exception mensaje) {
                         prestamoView.displayMessage(mensaje.getMessage());

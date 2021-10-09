@@ -5,19 +5,31 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 public class VistaPrestamo extends JFrame {
+
     JPanel panelA = new JPanel(new BorderLayout());
-    JPanel panelInfo = new JPanel();
-    JPanel panelBusq = new JPanel();
-    JPanel sur = new JPanel(new FlowLayout());
-    JPanel centro = new JPanel();
+    JPanel norte = new JPanel(new GridLayout(2,2));
+    JPanel sur = new JPanel();
+    JPanel panelVerif = new JPanel(new FlowLayout());
+    JPanel panelInfo = new JPanel(new FlowLayout());
+    JPanel panelBase = new JPanel(new FlowLayout());
 
     JButton boton1, boton2;
 
-    JTextField espacioId;
+    JTextField espacioMonto, espacioId;
+
+    JComboBox interes, plazo;
+
+    int intereses[] = {2,3,5,10,12,15};
+
+    int plazos[] = {3,6,10,12,24,48};
+
+    public String getCapturaMonto(){ return espacioMonto.getText(); }
 
     public String getCapturaId(){ return espacioId.getText(); }
 
-    public void displayMessage(String message){JOptionPane.showMessageDialog(this,message);}
+    public void displayMessage(String message){
+        JOptionPane.showMessageDialog(this,message);
+    }
 
     public void agregarListener(ActionListener al){
         boton1.addActionListener(al);
@@ -27,7 +39,7 @@ public class VistaPrestamo extends JFrame {
     public VistaPrestamo() throws HeadlessException {
         super("Prestamos");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        setSize(300,200);
+        setSize(600,200);
         setResizable(false);
         agregarComponentes(getContentPane());
         setVisible(true);
@@ -35,29 +47,50 @@ public class VistaPrestamo extends JFrame {
 
     public void agregarComponentes(Container contentPane) {
 
-        panelInfo.add(new JLabel("INFORMACION DEL CLIENTE"));
-
-        panelBusq.add(new JLabel("Cedula:"));
+        panelVerif.add(new JLabel("Cedula:"));
         espacioId = new JTextField();
         espacioId.setPreferredSize(new Dimension(150,25));
         espacioId.setToolTipText("Introduzca numero de cedula");
-        panelBusq.add(espacioId);
+        panelVerif.add(espacioId);
 
-        boton1 = new JButton("Buscar");
+        panelInfo.add(new JLabel("Monto:"));
+        espacioMonto = new JTextField();
+        espacioMonto.setPreferredSize(new Dimension(150,25));
+        espacioMonto.setToolTipText("Introduzca un monto en colones");
+        panelInfo.add(espacioMonto);
+
+        panelInfo.add(new JLabel("Interes:"));
+        interes = new JComboBox();
+        interes.setPreferredSize(new Dimension(50,25));
+        for (int item : intereses) {
+            interes.addItem(item);
+        }
+        panelInfo.add(interes);
+
+        panelInfo.add(new JLabel("Plazo:"));
+        plazo = new JComboBox();
+        plazo.setPreferredSize(new Dimension(50,25));
+        for (int item : plazos) {
+            plazo.addItem(item);
+        }
+        panelInfo.add(plazo);
+
+        boton1 = new JButton("Agregar");
         boton1.setPreferredSize(new Dimension(100,25));
         boton1.setActionCommand("1");
-        sur.add(boton1);
+        panelBase.add(boton1);
 
         boton2 = new JButton("Regresar");
         boton2.setPreferredSize(new Dimension(100,25));
         boton2.setActionCommand("2");
-        sur.add(boton2);
+        panelBase.add(boton2);
 
-        centro.add(panelInfo);
-        centro.add(panelBusq);
-
+        sur.add(panelBase);
+        norte.add(panelVerif);
+        norte.add(panelInfo);
+        panelA.add(norte, BorderLayout.NORTH);
         panelA.add(sur, BorderLayout.SOUTH);
-        panelA.add(centro, BorderLayout.CENTER);
         contentPane.add(panelA);
     }
+
 }
