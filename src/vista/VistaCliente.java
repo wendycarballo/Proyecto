@@ -172,10 +172,10 @@ public class VistaCliente extends JFrame {
         panelNombres.setBackground(Color.cyan);
         panelNombres.add(info);
 
-        panelImagenes.setPreferredSize(new Dimension(700,400));
-        panelImagenes.setBackground(Color.black);
+        panelImagenes.setPreferredSize(new Dimension(800,350));
+        panelImagenes.setBackground(Color.WHITE);
 
-        panelMapa.setPreferredSize(new Dimension(500,500));
+        panelMapa.setPreferredSize(new Dimension(800,400));
 
         pic1 = new ModeloMapa(createImageIcon("/mapas/" + sanJoseString + ".jpg",sanJoseString).getImage());
         pic1.setName("1");
