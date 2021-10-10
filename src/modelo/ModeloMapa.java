@@ -3,12 +3,10 @@ package modelo;
 import javax.accessibility.Accessible;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 
 public class ModeloMapa extends JComponent implements MouseListener, FocusListener, Accessible {
+
     private Image image;
 
     public ModeloMapa(Image image) {
@@ -28,7 +26,7 @@ public class ModeloMapa extends JComponent implements MouseListener, FocusListen
         }
 
         if(isFocusOwner()){
-            g.setColor(Color.RED);
+            g.setColor(Color.BLUE);
             g.drawImage(image,0,0,this);
         }
         else{
@@ -52,8 +50,14 @@ public class ModeloMapa extends JComponent implements MouseListener, FocusListen
 
     @Override
     public void mouseClicked(MouseEvent e) {
+        this.getLocationOnScreen();
 
-        requestFocusInWindow();
+//        if (e.getSource() == pic1){
+//            pic1.getName();
+//        }
+//        if (e.getSource() == labelTitulo){
+//            etiqueta1.setText("Hizo clic en el Titulo");
+//        }
 
     }
 

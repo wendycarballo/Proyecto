@@ -5,7 +5,6 @@ import modelo.*;
 
 public class Principal {
     public static void main(String[] args) {
-
         new ControladorPrincipal();
 
 //        JAXBParser parser = new JAXBParser();

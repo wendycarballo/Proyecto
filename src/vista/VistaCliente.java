@@ -5,6 +5,7 @@ import modelo.ModeloMapa;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
@@ -121,6 +122,75 @@ public class VistaCliente extends JFrame {
         espacioNombre.setToolTipText("Introduzca el nombre");
         panelInfo.add(espacioNombre);
 
+        pic1 = new ModeloMapa(createImageIcon("/mapas/" + sanJoseString + ".jpeg",sanJoseString).getImage());
+        pic1.setName("1");
+        panelImagenes.add(pic1);
+
+        pic2 = new ModeloMapa(createImageIcon("/mapas/" + alajuelaString + ".jpeg",alajuelaString).getImage());
+        pic2.setName("2");
+        panelImagenes.add(pic2);
+
+        pic3 = new ModeloMapa(createImageIcon("/mapas/" + cartagoString + ".jpeg",cartagoString).getImage());
+        pic3.setName("3");
+        panelImagenes.add(pic3);
+
+        pic4 = new ModeloMapa(createImageIcon("/mapas/" + herediaString + ".jpeg",herediaString).getImage());
+        pic4.setName("4");
+        panelImagenes.add(pic4);
+
+        pic5 = new ModeloMapa(createImageIcon("/mapas/" + guanacasteString + ".jpeg",guanacasteString).getImage());
+        pic5.setName("5");
+        panelImagenes.add(pic5);
+
+        pic6 = new ModeloMapa(createImageIcon("/mapas/" + puntarenasString + ".jpeg",puntarenasString).getImage());
+        pic6.setName("6");
+        panelImagenes.add(pic6);
+
+        pic7 = new ModeloMapa(createImageIcon("/mapas/" + limonString + ".jpeg",limonString).getImage());
+        pic7.setName("7");
+        panelImagenes.add(pic7);
+
+        KeyboardFocusManager focusManager = KeyboardFocusManager.getCurrentKeyboardFocusManager();
+        focusManager.addPropertyChangeListener(new PropertyChangeListener() {
+            @Override
+            public void propertyChange(PropertyChangeEvent evt) {
+                String prop = evt.getPropertyName();
+                if(("focusOwner".equals(prop)) && (evt.getNewValue() instanceof ModeloMapa)){
+                    Component comp = (Component) evt.getNewValue();
+                    String name = comp.getName();
+                    int num = Integer.parseInt(name);
+                    if (num < 0 || num > comments.length) {
+                        num = 0;
+                    }
+                    info.setText(comments[num]);
+                    switch (name){
+                        case "1":
+                            provincia.setText("San Jose");
+                            break;
+                        case "2":
+                            provincia.setText("Alajuela");
+                            break;
+                        case "3":
+                            provincia.setText("Cartago");
+                            break;
+                        case "4":
+                            provincia.setText("Heredia");
+                            break;
+                        case "5":
+                            provincia.setText("Guanacaste");
+                            break;
+                        case "6":
+                            provincia.setText("Puntarenas");
+                            break;
+                        case "7":
+                            provincia.setText("Limon");
+                            break;
+
+                    }
+                }
+            }
+        });
+
         panelDireccion.add(new JLabel("Provincia:"));
         provincia = new JTextField();
         provincia.setPreferredSize(new Dimension(150,25));
@@ -176,51 +246,6 @@ public class VistaCliente extends JFrame {
         panelImagenes.setBackground(Color.white);
 
         panelMapa.setPreferredSize(new Dimension(800,500));
-
-        pic1 = new ModeloMapa(createImageIcon("/mapas/" + sanJoseString + ".jpeg",sanJoseString).getImage());
-        pic1.setName("1");
-        panelImagenes.add(pic1);
-
-        pic2 = new ModeloMapa(createImageIcon("/mapas/" + alajuelaString + ".jpeg",alajuelaString).getImage());
-        pic2.setName("2");
-        panelImagenes.add(pic2);
-
-        pic3 = new ModeloMapa(createImageIcon("/mapas/" + cartagoString + ".jpeg",cartagoString).getImage());
-        pic3.setName("3");
-        panelImagenes.add(pic3);
-
-        pic4 = new ModeloMapa(createImageIcon("/mapas/" + herediaString + ".jpeg",herediaString).getImage());
-        pic4.setName("4");
-        panelImagenes.add(pic4);
-
-        pic5 = new ModeloMapa(createImageIcon("/mapas/" + guanacasteString + ".jpeg",guanacasteString).getImage());
-        pic5.setName("5");
-        panelImagenes.add(pic5);
-
-        pic6 = new ModeloMapa(createImageIcon("/mapas/" + puntarenasString + ".jpeg",puntarenasString).getImage());
-        pic6.setName("6");
-        panelImagenes.add(pic6);
-
-        pic7 = new ModeloMapa(createImageIcon("/mapas/" + limonString + ".jpeg",limonString).getImage());
-        pic7.setName("7");
-        panelImagenes.add(pic7);
-
-        KeyboardFocusManager focusManager = KeyboardFocusManager.getCurrentKeyboardFocusManager();
-        focusManager.addPropertyChangeListener(new PropertyChangeListener() {
-            @Override
-            public void propertyChange(PropertyChangeEvent evt) {
-                String prop = evt.getPropertyName();
-                if(("focusOwner".equals(prop)) && (evt.getNewValue() instanceof ModeloMapa)){
-                    Component comp = (Component) evt.getNewValue();
-                    String name = comp.getName();
-                    int num = Integer.parseInt(name);
-                    if (num < 0 || num > comments.length) {
-                        num = 0;
-                    }
-                    info.setText(comments[num]);
-                }
-            }
-        });
 
         panelMapa.add(panelImagenes);
         panelMapa.add(panelNombres);
