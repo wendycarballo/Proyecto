@@ -172,36 +172,36 @@ public class VistaCliente extends JFrame {
         panelNombres.setBackground(Color.cyan);
         panelNombres.add(info);
 
-        panelImagenes.setPreferredSize(new Dimension(700,400));
-        panelImagenes.setBackground(Color.black);
+        panelImagenes.setPreferredSize(new Dimension(800,400));
+        panelImagenes.setBackground(Color.white);
 
-        panelMapa.setPreferredSize(new Dimension(500,500));
+        panelMapa.setPreferredSize(new Dimension(800,500));
 
-        pic1 = new ModeloMapa(createImageIcon("/mapas/" + sanJoseString + ".jpg",sanJoseString).getImage());
+        pic1 = new ModeloMapa(createImageIcon("/mapas/" + sanJoseString + ".jpeg",sanJoseString).getImage());
         pic1.setName("1");
         panelImagenes.add(pic1);
 
-        pic2 = new ModeloMapa(createImageIcon("/mapas/" + alajuelaString + ".jpg",alajuelaString).getImage());
+        pic2 = new ModeloMapa(createImageIcon("/mapas/" + alajuelaString + ".jpeg",alajuelaString).getImage());
         pic2.setName("2");
         panelImagenes.add(pic2);
 
-        pic3 = new ModeloMapa(createImageIcon("/mapas/" + cartagoString + ".jpg",cartagoString).getImage());
+        pic3 = new ModeloMapa(createImageIcon("/mapas/" + cartagoString + ".jpeg",cartagoString).getImage());
         pic3.setName("3");
         panelImagenes.add(pic3);
 
-        pic4 = new ModeloMapa(createImageIcon("/mapas/" + herediaString + ".jpg",herediaString).getImage());
+        pic4 = new ModeloMapa(createImageIcon("/mapas/" + herediaString + ".jpeg",herediaString).getImage());
         pic4.setName("4");
         panelImagenes.add(pic4);
 
-        pic5 = new ModeloMapa(createImageIcon("/mapas/" + guanacasteString + ".jpg",guanacasteString).getImage());
+        pic5 = new ModeloMapa(createImageIcon("/mapas/" + guanacasteString + ".jpeg",guanacasteString).getImage());
         pic5.setName("5");
         panelImagenes.add(pic5);
 
-        pic6 = new ModeloMapa(createImageIcon("/mapas/" + puntarenasString + ".jpg",puntarenasString).getImage());
+        pic6 = new ModeloMapa(createImageIcon("/mapas/" + puntarenasString + ".jpeg",puntarenasString).getImage());
         pic6.setName("6");
         panelImagenes.add(pic6);
 
-        pic7 = new ModeloMapa(createImageIcon("/mapas/" + limonString + ".jpg",limonString).getImage());
+        pic7 = new ModeloMapa(createImageIcon("/mapas/" + limonString + ".jpeg",limonString).getImage());
         pic7.setName("7");
         panelImagenes.add(pic7);
 

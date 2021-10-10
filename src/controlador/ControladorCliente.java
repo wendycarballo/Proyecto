@@ -27,6 +27,7 @@ public class ControladorCliente {
                             JAXBParser parser = new JAXBParser();
                             ListaCliente listaCli = (ListaCliente) parser.unmarshall(new ListaCliente(), "Clientes.xml");
                             ModeloCliente cliente = new ModeloCliente();
+                            boolean found = false;
                             for(ModeloCliente element : listaCli.getListaCliente()){
                                 if (element.getId() == Integer.parseInt(clienteView.getCapturaId())) {
                                     cliente.setId(Integer.parseInt(clienteView.getCapturaId()));
@@ -40,13 +41,18 @@ public class ControladorCliente {
                                     clienteView.setVisible(false);
                                     ControladorListaCliente clc = new ControladorListaCliente();
                                     clc.listaCView.agregaTabla(sp);
+                                    found = true;
                                 }
-                                //CREAR EXCEPCION SI NO ESTA
                             }
+                            if (found != true) {
+                                throw new Exception(" El cliente no se encuentra registrado");
+                            }
+
                         }
                         else{
                             throw new Exception("Error, debe digitar un id");
                         }
+
                     } catch (Exception mensaje) {
                         clienteView.displayMessage(mensaje.getMessage());
                     }

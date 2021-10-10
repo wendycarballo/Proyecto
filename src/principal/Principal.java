@@ -1,6 +1,7 @@
 package principal;
 
 import controlador.ControladorPrincipal;
+import modelo.*;
 
 public class Principal {
     public static void main(String[] args) {
@@ -60,17 +61,17 @@ public class Principal {
 //        ListaPago lpag4 = new ListaPago();
 //        lpag4.add(pag7);
 //
-//        ModeloPrestamo pre1 = new ModeloPrestamo(100000,10,6,lpag1);
-//        ModeloPrestamo pre2 = new ModeloPrestamo(1100000,15,24,lpag2);
+//        ModeloPrestamo pre1 = new ModeloPrestamo(1,100000,10,6,lpag1);
+//        ModeloPrestamo pre2 = new ModeloPrestamo(2,1100000,15,24,lpag2);
 //        ListaPrestamo lpre1 = new ListaPrestamo();
 //        lpre1.add(pre1);
 //        lpre1.add(pre2);
 //
-//        ModeloPrestamo pre3 = new ModeloPrestamo(200000,12,12,lpag3);
+//        ModeloPrestamo pre3 = new ModeloPrestamo(3,200000,12,12,lpag3);
 //        ListaPrestamo lpre2 = new ListaPrestamo();
 //        lpre2.add(pre3);
 //
-//        ModeloPrestamo pre4 = new ModeloPrestamo(300000,8,12,lpag4);
+//        ModeloPrestamo pre4 = new ModeloPrestamo(4,300000,8,12,lpag4);
 //        ListaPrestamo lpre3 = new ListaPrestamo();
 //        lpre3.add(pre4);
 //

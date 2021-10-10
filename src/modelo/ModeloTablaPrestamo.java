@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ModeloTablaPrestamo extends AbstractTableModel {
     List<ModeloPrestamo> filas;
-    private String column[] = {"Monto prestamo","Interes %","Plazo","Pagos realizados"};
+    private String column[] = {"ID","Monto prestamo","Interes %","Plazo","Pagos realizados"};
 
     public ModeloTablaPrestamo(List<ModeloPrestamo> filas) { this.filas = filas; }
 
@@ -16,16 +16,17 @@ public class ModeloTablaPrestamo extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return 4;
+        return 5;
     }
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         ModeloPrestamo act = (ModeloPrestamo) filas.get(rowIndex);
         switch (columnIndex){
-            case 0: return act.getMonto();
-            case 1: return act.getInteres();
-            case 2: return act.getPlazo();
+            case 0: return act.getIdentificador();
+            case 1: return act.getMonto();
+            case 2: return act.getInteres();
+            case 3: return act.getPlazo();
             //CREAR CONTADOR PARA NUMERO DE PAGOS
             default: return null;
         }

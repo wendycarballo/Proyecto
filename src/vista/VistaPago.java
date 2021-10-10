@@ -14,11 +14,11 @@ public class VistaPago extends JFrame {
 
     JButton boton1, boton2;
 
-    JTextField espacioId, espacioPrestamo, espacioFecha, espacioMonto;
+    JTextField espacioId, espacioIdentificador, espacioFecha, espacioMonto;
 
     public String getCapturaId(){ return espacioId.getText(); }
 
-    public String getCapturaPrestamo(){ return espacioPrestamo.getText(); }
+    public String getCapturaIdentificador(){ return espacioIdentificador.getText(); }
 
     public String getCapturaFecha(){ return espacioFecha.getText(); }
 
@@ -50,11 +50,11 @@ public class VistaPago extends JFrame {
         espacioId.setToolTipText("Introduzca numero de cedula");
         panelVerif.add(espacioId);
 
-        panelInfo.add(new JLabel("Prestamo"));
-        espacioPrestamo = new JTextField();
-        espacioPrestamo.setPreferredSize(new Dimension(150,25));
-        espacioPrestamo.setToolTipText("Introduzca el monto del prestamo al que va a pagar");
-        panelInfo.add(espacioPrestamo);
+        panelInfo.add(new JLabel("Identificador:"));
+        espacioIdentificador = new JTextField();
+        espacioIdentificador.setPreferredSize(new Dimension(150,25));
+        espacioIdentificador.setToolTipText("Introduzca el identificador del prestamo");
+        panelInfo.add(espacioIdentificador);
 
         panelInfo.add(new JLabel("Fecha"));
         espacioFecha = new JTextField();

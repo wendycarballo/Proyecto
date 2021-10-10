@@ -1,7 +1,9 @@
 package modelo;
 
 public class ModeloPrestamo {
-    private int monto;
+    private int identificador;
+    private int montoInicial;
+    private double monto;
     private float interes;
     private int plazo;
     private ListaPago pagoList;
@@ -9,18 +11,28 @@ public class ModeloPrestamo {
     public ModeloPrestamo() {
     }
 
-    public ModeloPrestamo(int monto, float interes, int plazo, ListaPago pagoList) {
+    public ModeloPrestamo(int identificador, int monto, float interes, int plazo, ListaPago pagoList) {
+        this.identificador = identificador;
+        this.montoInicial = monto;
         this.monto = monto;
         this.interes = interes;
         this.plazo = plazo;
         this.pagoList = pagoList;
     }
 
-    public int getMonto() {
+    public int getIdentificador() { return identificador; }
+
+    public void setIdentificador(int identificador) { this.identificador = identificador; }
+
+    public int getMontoInicial() { return montoInicial; }
+
+    public void setMontoInicial(int montoInicial) { this.montoInicial = montoInicial; }
+
+    public double getMonto() {
         return monto;
     }
 
-    public void setMonto(int monto) {
+    public void setMonto(double monto) {
         this.monto = monto;
     }
 
@@ -50,25 +62,18 @@ public class ModeloPrestamo {
 
     public double calculoCuota(){
         float interes = getInteres()/100;
-        int montoInteres = (int) (getMonto() * interes);
+        int montoInteres = (int) (getMontoInicial() * interes);
         double interesPlazo = (1 - Math.pow(1/(1 + interes),getPlazo()));
         return montoInteres/interesPlazo;
     }
 
     @Override
     public String toString() {
-        return  "Informacion del Prestamo: " +
-                "\nMonto del prestamo: " + getMonto() + " colones" +
+        return  "Informacion del Prestamo: " + "\nID " + getIdentificador() +
+                " Monto del prestamo: " + getMonto() + " colones" +
                 ", interes: " + getInteres() + " %" +
                 ", plazo: " + getPlazo() + " meses\n"
                 + "Pagos realizados:\n" + getPagoList();
-    }
-
-    public void agregarPago(String fecha, double monto){
-        for(ModeloPago element : pagoList.getListaPago()){
-
-        }
-
     }
 
 }

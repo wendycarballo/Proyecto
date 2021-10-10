@@ -15,7 +15,7 @@ public class VistaPrestamo extends JFrame {
 
     JButton boton1, boton2;
 
-    JTextField espacioMonto, espacioId;
+    JTextField espacioIdentificador, espacioMonto,  espacioId;
 
     JComboBox interes, plazo;
 
@@ -23,9 +23,21 @@ public class VistaPrestamo extends JFrame {
 
     int plazos[] = {3,6,10,12,24,48};
 
+    public String getCapturaIdentificador(){ return espacioIdentificador.getText(); }
+
     public String getCapturaMonto(){ return espacioMonto.getText(); }
 
     public String getCapturaId(){ return espacioId.getText(); }
+
+    public String getIntereses(){
+        String inte =String.valueOf(interes.getSelectedItem());
+        return inte;
+    }
+
+    public String getPlazos(){
+        String tiempo =String.valueOf(plazo.getSelectedItem());
+        return tiempo;
+    }
 
     public void displayMessage(String message){
         JOptionPane.showMessageDialog(this,message);
@@ -52,6 +64,12 @@ public class VistaPrestamo extends JFrame {
         espacioId.setPreferredSize(new Dimension(150,25));
         espacioId.setToolTipText("Introduzca numero de cedula");
         panelVerif.add(espacioId);
+
+        panelInfo.add(new JLabel("Identificador:"));
+        espacioIdentificador = new JTextField();
+        espacioIdentificador.setPreferredSize(new Dimension(50,25));
+        espacioIdentificador.setToolTipText("Introduzca el id del prestamo");
+        panelInfo.add(espacioIdentificador);
 
         panelInfo.add(new JLabel("Monto:"));
         espacioMonto = new JTextField();

@@ -26,14 +26,21 @@ public class ControladorPrestamo {
                     try{
                         JAXBParser parser = new JAXBParser();
                         ListaCliente listaCli = (ListaCliente) parser.unmarshall(new ListaCliente(), "Clientes.xml");
-                        if(!prestamoView.getCapturaId().isEmpty() && !prestamoView.getCapturaMonto().isEmpty()) {
+                        boolean found = false;
+                        if(!prestamoView.getCapturaId().isEmpty() && !prestamoView.getCapturaMonto().isEmpty() && !prestamoView.getCapturaIdentificador().isEmpty()) {
                             for(ModeloCliente element : listaCli.getListaCliente()) {
                                 if (element.getId() == Integer.parseInt(prestamoView.getCapturaId())) {
+                                    for(ModeloPrestamo element1 : element.getPrestamo().getListaPrestamo()) {
+                                        if (element1.getIdentificador() == Integer.parseInt(prestamoView.getCapturaIdentificador())){
+                                            throw new Exception("El identificador ya existe");
+                                        }
+                                    }
+
                                     ModeloPrestamo prestamo = new ModeloPrestamo();
+                                    prestamo.setIdentificador(Integer.parseInt(prestamoView.getCapturaIdentificador()));
                                     prestamo.setMonto(Integer.parseInt(prestamoView.getCapturaMonto()));
-                                    //CAMBIAR
-                                    prestamo.setInteres(15);
-                                    prestamo.setPlazo(12);
+                                    prestamo.setInteres(Integer.parseInt(prestamoView.getIntereses()));
+                                    prestamo.setPlazo(Integer.parseInt(prestamoView.getPlazos()));
                                     prestamo.setPagoList(null);
                                     ListaPrestamo listaComodin = new ListaPrestamo();
                                     for(ModeloPrestamo element1 : element.getPrestamo().getListaPrestamo()) {
@@ -49,6 +56,10 @@ public class ControladorPrestamo {
                                     prestamoView.setVisible(false);
                                     ControladorListaPrestamo clc = new ControladorListaPrestamo();
                                     clc.listaPView.agregaTabla(sp);
+                                    found = true;
+                                }
+                                if (found != true) {
+                                    throw new Exception(" El cliente no se encuentra registrado");
                                 }
                             }
                         }
