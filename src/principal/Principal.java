@@ -1,11 +1,6 @@
 package principal;
 
-import controlador.ControladorListaCliente;
-import controlador.ControladorListaPrestamo;
 import controlador.ControladorPrincipal;
-import modelo.*;
-
-import javax.swing.*;
 
 public class Principal {
     public static void main(String[] args) {

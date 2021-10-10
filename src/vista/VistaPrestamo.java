@@ -37,7 +37,7 @@ public class VistaPrestamo extends JFrame {
     }
 
     public VistaPrestamo() throws HeadlessException {
-        super("Prestamos");
+        super("Pagos Prestamo");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setSize(600,200);
         setResizable(false);
