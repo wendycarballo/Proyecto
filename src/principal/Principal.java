@@ -14,7 +14,7 @@ public class Principal {
 //        System.out.println(clientes);
 
 //        JAXBParser parser = new JAXBParser();
-//        ListaProvincia provincias = (ListaProvincia) parser.unmarshall(new ListaProvincia(), "ProvinciasAnidadas1.xml");
+//        ListaProvincia provincias = (ListaProvincia) parser.unmarshall(new ListaProvincia(), "ProvinciasAnidadas.xml");
 //
 //        System.out.println(provincias);
 

@@ -52,7 +52,9 @@ public class ModeloMapa extends JComponent implements MouseListener, FocusListen
 
     @Override
     public void mouseClicked(MouseEvent e) {
+
         requestFocusInWindow();
+
     }
 
     @Override
