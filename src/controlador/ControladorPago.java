@@ -17,6 +17,7 @@ public class ControladorPago {
 //        jtXML.setBounds(30, 40, 100, 100);
 //        JScrollPane sp = new JScrollPane(jtXML);
 //        pago.agregaTabla(sp);
+
         pagoView.agregarListener(new ControladorPago.ClaseAction());
     }
 
