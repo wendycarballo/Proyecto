@@ -6,6 +6,7 @@ public class ModeloPrestamo {
     private double monto;
     private float interes;
     private int plazo;
+    private double cuota;
     private ListaPago pagoList;
 
     public ModeloPrestamo() {
@@ -17,6 +18,7 @@ public class ModeloPrestamo {
         this.monto = monto;
         this.interes = interes;
         this.plazo = plazo;
+        this.cuota = calculoCuota();
         this.pagoList = pagoList;
     }
 
@@ -52,6 +54,10 @@ public class ModeloPrestamo {
         this.plazo = plazo;
     }
 
+    public double getCuota() { return calculoCuota(); }
+
+    public void setCuota(double cuota) { this.cuota = cuota; }
+
     public ListaPago getPagoList() {
         return pagoList;
     }
@@ -72,7 +78,8 @@ public class ModeloPrestamo {
         return  "Informacion del Prestamo: " + "\nID " + getIdentificador() +
                 " Monto del prestamo: " + getMonto() + " colones" +
                 ", interes: " + getInteres() + " %" +
-                ", plazo: " + getPlazo() + " meses\n"
+                ", plazo: " + getPlazo() + " meses\n" +
+                ", cuota: " + getCuota() + " meses\n"
                 + "Pagos realizados:\n" + getPagoList();
     }
 

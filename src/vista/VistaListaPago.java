@@ -14,10 +14,6 @@ public class VistaListaPago extends JFrame {
 
     JButton boton1;
 
-    public void displayMessage(String message){
-        JOptionPane.showMessageDialog(this,message);
-    }
-
     public void agregarListener(ActionListener al){
         boton1.addActionListener(al);
     }

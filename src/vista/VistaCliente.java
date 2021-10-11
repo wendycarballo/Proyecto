@@ -1,13 +1,13 @@
 package vista;
 
-import modelo.ModeloMapa;
+import modelo.*;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.util.ArrayList;
 
 public class VistaCliente extends JFrame {
     JPanel panelA = new JPanel(new BorderLayout());
@@ -21,9 +21,9 @@ public class VistaCliente extends JFrame {
     JPanel panelInfo = new JPanel(new FlowLayout());
     JPanel panelDireccion = new JPanel(new FlowLayout());
 
-    JTextField espacioId, espacioNombre, provincia;
+    JTextField espacioId, espacioNombre;
 
-    JComboBox canton, distrito;
+    JComboBox provincia, canton, distrito;
 
     JButton boton1, boton2, boton3, boton4;
 
@@ -36,6 +36,12 @@ public class VistaCliente extends JFrame {
     public String getCapturaNombre(){
         return espacioNombre.getText();
     }
+
+    public String getProvincia() {return (String) provincia.getSelectedItem();}
+
+    public String getCanton() {return (String) canton.getSelectedItem();}
+
+    public String getDistrito() {return (String) distrito.getSelectedItem();}
 
     ModeloMapa pic1, pic2, pic3, pic4, pic5, pic6, pic7;
     static String sanJoseString = "sanJose";
@@ -57,27 +63,50 @@ public class VistaCliente extends JFrame {
             "Limon",
     };
 
-//    public java.util.List<String> listarCantones(){
-//        java.util.List<String> cantones = new ArrayList<>();
-//        JAXBParser parser = new JAXBParser();
-//        ListaCanton canLista = (ListaCanton) parser.unmarshall(new ListaCanton(),"ProvinciasAnidadas.xml");
-//
-//        for(CantonModelo element : canLista.getCanList()) {
-//            cantones.add(element.getNombre());
-//        }
-//        return cantones;
-//    }
+    public java.util.List<String> listarProvincias(){
+        java.util.List<String> provincias = new ArrayList<>();
+        JAXBParser parser = new JAXBParser();
+        ListaProvincia listaProvincias = (ListaProvincia) parser.unmarshall(new ListaProvincia(),"ProvinciasAnidadas.xml");
 
-//    public java.util.List<String> listarDistritos(){
-//        java.util.List<String> distritos = new ArrayList<>();
-//        JAXBParser parser = new JAXBParser();
-//        ListaDistrito distLista = (ListaDistrito) parser.unmarshall(new ListaDistrito(),"ProvinciasAnidadas.xml");
-//
-//        for(DistritoModelo element : distLista.getDistList()) {
-//            distritos.add(element.getNombre());
-//        }
-//        return distritos;
-//    }
+        for(ModeloProvincia element : listaProvincias.getProvincias()) {
+            provincias.add(element.getNombre());
+        }
+        return provincias;
+    }
+
+    public java.util.List<String> listarCantones(String lqs){
+        java.util.List<String> cantones = new ArrayList<>();
+        JAXBParser parser = new JAXBParser();
+        ListaProvincia listaProvincias = (ListaProvincia) parser.unmarshall(new ListaProvincia(),"ProvinciasAnidadas.xml");
+
+        for(ModeloProvincia provinciaLeida : listaProvincias.getProvincias()) {
+            if(provinciaLeida.getNombre().equals(lqs)){
+                for(ModeloCanton cantonLeido : provinciaLeida.getCantones().getCantones()) {
+                    cantones.add(cantonLeido.getNombre());
+                }
+            }
+        }
+        return cantones;
+    }
+
+    public java.util.List<String> listarDistritos(String lqs1, String lqs2){
+        java.util.List<String> distritos = new ArrayList<>();
+        JAXBParser parser = new JAXBParser();
+        ListaProvincia listaProvincias = (ListaProvincia) parser.unmarshall(new ListaProvincia(),"ProvinciasAnidadas.xml");
+
+        for(ModeloProvincia element : listaProvincias.getProvincias()) {
+            if(element.getNombre().equals(lqs1)){
+                for(ModeloCanton element1 : element.getCantones().getCantones()) {
+                    if(element1.getNombre().equals(lqs2)){
+                        for(ModeloDistrito element2 : element1.getDistritos().getDistritos()) {
+                            distritos.add(element2.getNombre());
+                        }
+                    }
+                }
+            }
+        }
+        return distritos;
+    }
 
     public void agregarListener(ActionListener al){
         boton1.addActionListener(al);
@@ -163,59 +192,35 @@ public class VistaCliente extends JFrame {
                         num = 0;
                     }
                     info.setText(comments[num]);
-                    switch (name){
-                        case "1":
-                            provincia.setText("San Jose");
-                            break;
-                        case "2":
-                            provincia.setText("Alajuela");
-                            break;
-                        case "3":
-                            provincia.setText("Cartago");
-                            break;
-                        case "4":
-                            provincia.setText("Heredia");
-                            break;
-                        case "5":
-                            provincia.setText("Guanacaste");
-                            break;
-                        case "6":
-                            provincia.setText("Puntarenas");
-                            break;
-                        case "7":
-                            provincia.setText("Limon");
-                            break;
-
-                    }
                 }
             }
         });
 
         panelDireccion.add(new JLabel("Provincia:"));
-        provincia = new JTextField();
+        provincia = new JComboBox();
         provincia.setPreferredSize(new Dimension(150,25));
-//        java.util.List<String> cantones = sacarInfo();
-//        for (String item : cantones) {
-//            canton.addItem(item);
-//        }
+        java.util.List<String> provincias = listarProvincias();
+        for (String item : provincias) {
+            provincia.addItem(item);
+        }
         panelDireccion.add(provincia);
 
         panelDireccion.add(new JLabel("Canton:"));
         canton = new JComboBox();
         canton.setPreferredSize(new Dimension(150,25));
-//        java.util.List<String> cantones = sacarInfo();
-//        for (String item : cantones) {
-//            canton.addItem(item);
-//        }
+        java.util.List<String> cantones = listarCantones(getProvincia());
+        for (String item : cantones) {
+            canton.addItem(item);
+        }
         panelDireccion.add(canton);
 
         panelDireccion.add(new JLabel("Distrito:"));
         distrito = new JComboBox();
         distrito.setPreferredSize(new Dimension(150,25));
-//        List<String> distritos = listarDistritos();
-//        for (String item : distritos) {
-//            distrito.addItem(item);
-//        }
+        java.util.List<String> distritos = listarDistritos(getProvincia(),getCanton());
+        for (String item : distritos) {
+            distrito.addItem(item);
+        }
         panelDireccion.add(distrito);
 
         boton1 = new JButton("Buscar");

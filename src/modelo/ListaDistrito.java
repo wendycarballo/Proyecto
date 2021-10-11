@@ -1,6 +1,5 @@
 package modelo;
 
-import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
 import java.util.ArrayList;
@@ -18,7 +17,6 @@ public class ListaDistrito {
         this.distritos = distritos;
     }
 
-    //@XmlElement
     public List<ModeloDistrito> getDistritos() {
         return distritos;
     }

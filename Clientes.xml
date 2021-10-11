@@ -10,6 +10,7 @@
         </direccion>
         <prestamo>
             <listaPrestamo>
+                <cuota>0.0</cuota>
                 <identificador>1</identificador>
                 <interes>10.0</interes>
                 <monto>100000.0</monto>
@@ -39,6 +40,7 @@
                 <plazo>6</plazo>
             </listaPrestamo>
             <listaPrestamo>
+                <cuota>0.0</cuota>
                 <identificador>2</identificador>
                 <interes>15.0</interes>
                 <monto>1100000.0</monto>
@@ -58,6 +60,7 @@
                 <plazo>24</plazo>
             </listaPrestamo>
             <listaPrestamo>
+                <cuota>0.0</cuota>
                 <identificador>14</identificador>
                 <interes>2.0</interes>
                 <monto>522200.0</monto>
@@ -65,9 +68,122 @@
                 <plazo>3</plazo>
             </listaPrestamo>
             <listaPrestamo>
+                <cuota>0.0</cuota>
                 <identificador>3</identificador>
                 <interes>2.0</interes>
                 <monto>400.0</monto>
+                <montoInicial>0</montoInicial>
+                <plazo>3</plazo>
+            </listaPrestamo>
+            <listaPrestamo>
+                <cuota>0.0</cuota>
+                <identificador>8</identificador>
+                <interes>10.0</interes>
+                <monto>9876543.0</monto>
+                <montoInicial>0</montoInicial>
+                <plazo>12</plazo>
+            </listaPrestamo>
+            <listaPrestamo>
+                <cuota>0.0</cuota>
+                <identificador>99</identificador>
+                <interes>2.0</interes>
+                <monto>76543.0</monto>
+                <montoInicial>0</montoInicial>
+                <plazo>3</plazo>
+            </listaPrestamo>
+            <listaPrestamo>
+                <cuota>0.0</cuota>
+                <identificador>34</identificador>
+                <interes>2.0</interes>
+                <monto>765432.0</monto>
+                <montoInicial>0</montoInicial>
+                <plazo>3</plazo>
+            </listaPrestamo>
+            <listaPrestamo>
+                <cuota>0.0</cuota>
+                <identificador>55</identificador>
+                <interes>2.0</interes>
+                <monto>9.8765432E7</monto>
+                <montoInicial>0</montoInicial>
+                <plazo>10</plazo>
+            </listaPrestamo>
+            <listaPrestamo>
+                <cuota>0.0</cuota>
+                <identificador>67</identificador>
+                <interes>10.0</interes>
+                <monto>500000.0</monto>
+                <montoInicial>0</montoInicial>
+                <plazo>12</plazo>
+            </listaPrestamo>
+            <listaPrestamo>
+                <cuota>0.0</cuota>
+                <identificador>222</identificador>
+                <interes>10.0</interes>
+                <monto>500000.0</monto>
+                <montoInicial>0</montoInicial>
+                <plazo>12</plazo>
+            </listaPrestamo>
+            <listaPrestamo>
+                <cuota>0.0</cuota>
+                <identificador>231356</identificador>
+                <interes>10.0</interes>
+                <monto>5.0E7</monto>
+                <montoInicial>0</montoInicial>
+                <plazo>24</plazo>
+            </listaPrestamo>
+            <listaPrestamo>
+                <cuota>0.0</cuota>
+                <identificador>5656</identificador>
+                <interes>10.0</interes>
+                <monto>500000.0</monto>
+                <montoInicial>0</montoInicial>
+                <plazo>12</plazo>
+            </listaPrestamo>
+            <listaPrestamo>
+                <cuota>0.0</cuota>
+                <identificador>213154</identificador>
+                <interes>10.0</interes>
+                <monto>7500000.0</monto>
+                <montoInicial>0</montoInicial>
+                <plazo>12</plazo>
+            </listaPrestamo>
+            <listaPrestamo>
+                <cuota>0.0</cuota>
+                <identificador>7447754</identificador>
+                <interes>2.0</interes>
+                <monto>2000000.0</monto>
+                <montoInicial>0</montoInicial>
+                <plazo>3</plazo>
+            </listaPrestamo>
+            <listaPrestamo>
+                <cuota>0.0</cuota>
+                <identificador>555</identificador>
+                <interes>2.0</interes>
+                <monto>350000.0</monto>
+                <montoInicial>0</montoInicial>
+                <plazo>3</plazo>
+            </listaPrestamo>
+            <listaPrestamo>
+                <cuota>0.0</cuota>
+                <identificador>13213</identificador>
+                <interes>2.0</interes>
+                <monto>9.9999999E7</monto>
+                <montoInicial>0</montoInicial>
+                <plazo>3</plazo>
+            </listaPrestamo>
+            <listaPrestamo>
+                <cuota>0.0</cuota>
+                <identificador>123135</identificador>
+                <interes>2.0</interes>
+                <monto>46542.0</monto>
+                <montoInicial>0</montoInicial>
+                <plazo>3</plazo>
+            </listaPrestamo>
+            <listaPrestamo>
+                <cuota>0.0</cuota>
+                <identificador>123456</identificador>
+                <interes>2.0</interes>
+                <monto>546542.0</monto>
                 <montoInicial>0</montoInicial>
                 <plazo>3</plazo>
             </listaPrestamo>
@@ -83,6 +199,7 @@
         </direccion>
         <prestamo>
             <listaPrestamo>
+                <cuota>0.0</cuota>
                 <identificador>3</identificador>
                 <interes>12.0</interes>
                 <monto>200000.0</monto>
@@ -113,6 +230,7 @@
         </direccion>
         <prestamo>
             <listaPrestamo>
+                <cuota>0.0</cuota>
                 <identificador>4</identificador>
                 <interes>8.0</interes>
                 <monto>300000.0</monto>
@@ -138,6 +256,7 @@
         </direccion>
         <prestamo>
             <listaPrestamo>
+                <cuota>0.0</cuota>
                 <identificador>3</identificador>
                 <interes>12.0</interes>
                 <monto>200000.0</monto>

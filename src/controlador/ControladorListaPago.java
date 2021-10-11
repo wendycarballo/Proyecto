@@ -1,9 +1,7 @@
 package controlador;
 
-import modelo.*;
 import vista.VistaListaPrestamo;
 
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -13,19 +11,7 @@ public class ControladorListaPago {
 
     public ControladorListaPago() {
         this.listaPagoView = new VistaListaPrestamo();
-        //JTable jtXML = tablaXML();
-        //JScrollPane sp = new JScrollPane(jtXML);
-        //listaPView.agregaTabla(sp);
         listaPagoView.agregarListener(new ControladorListaPago.ClaseAction());
-    }
-
-    private JTable tablaXML() {
-        JAXBParser parser = new JAXBParser();
-        ListaPago pagos = (ListaPago) parser.unmarshall(new ListaPago(), "Clientes.xml");
-
-        JTable tabla = new JTable();
-        tabla.setModel(new ModeloTablaPago(pagos.getListaPago()));
-        return tabla;
     }
 
     private class ClaseAction implements ActionListener {

@@ -1,5 +1,7 @@
 package modelo;
 
+import vista.VistaCliente;
+
 import javax.accessibility.Accessible;
 import javax.swing.*;
 import java.awt.*;
@@ -50,14 +52,6 @@ public class ModeloMapa extends JComponent implements MouseListener, FocusListen
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        this.getLocationOnScreen();
-
-//        if (e.getSource() == pic1){
-//            pic1.getName();
-//        }
-//        if (e.getSource() == labelTitulo){
-//            etiqueta1.setText("Hizo clic en el Titulo");
-//        }
 
     }
 
@@ -81,3 +75,4 @@ public class ModeloMapa extends JComponent implements MouseListener, FocusListen
 
     }
 }
+

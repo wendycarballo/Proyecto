@@ -34,7 +34,7 @@ public class VistaPago extends JFrame {
     }
 
     public VistaPago() throws HeadlessException {
-        super("Prestamos");
+        super("Pago");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setSize(800,200);
         setResizable(false);
@@ -62,7 +62,7 @@ public class VistaPago extends JFrame {
         espacioFecha.setToolTipText("DD/MM/AA");
         panelInfo.add(espacioFecha);
 
-        panelInfo.add(new JLabel("Monto cancelado:"));
+        panelInfo.add(new JLabel("Monto extra cancelado:"));
         espacioMonto = new JTextField();
         espacioMonto.setPreferredSize(new Dimension(150,25));
         espacioMonto.setToolTipText("Introduzca un monto en colones");

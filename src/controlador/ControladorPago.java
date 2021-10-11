@@ -13,11 +13,6 @@ public class ControladorPago {
 
     public ControladorPago() {
         this.pagoView = new VistaPago();
-//        JTable jtXML = tablaXML();
-//        jtXML.setBounds(30, 40, 100, 100);
-//        JScrollPane sp = new JScrollPane(jtXML);
-//        pago.agregaTabla(sp);
-
         pagoView.agregarListener(new ControladorPago.ClaseAction());
     }
 
@@ -38,20 +33,25 @@ public class ControladorPago {
                                     for(ModeloPrestamo prestamos : cliente.getPrestamo().getListaPrestamo()) {
                                         if (prestamos.getIdentificador() == Integer.parseInt(pagoView.getCapturaIdentificador())){
                                            if (pagoView.getCapturaMonto().isEmpty()){
-                                               prestamos.setMonto(prestamos.getMonto() - prestamos.calculoCuota());
+                                               prestamos.setMonto(prestamos.getMonto() - (prestamos.getCuota()) * 0.4322);
                                            }
 
                                             ListaPago listaComodin = new ListaPago();
-                                          //  listaComodin.setListaPrestamo(cliente.getPrestamo().getListaPrestamo());
 
-                                                //Lista de pagos
                                             listaComodin.setListaPago(prestamos.getPagoList().getListaPago());
                                             ModeloPago pago = new ModeloPago();
                                             pago.setFecha(pagoView.getCapturaFecha());
                                             pago.setMontoCancelado(Integer.parseInt(pagoView.getCapturaMonto()));
-                                            pago.setNumeroCuota(pago.getNumeroCuota()+1);
+                                            if(listaComodin == null){
+                                                pago.setNumeroCuota(1);
+                                            }
+                                            else{
+                                                pago.setNumeroCuota(2);
+                                            }
                                             listaComodin.add(pago);
 
+                                            double nuevoMonto = (prestamos.getMonto() - (prestamos.getCuota() * 0.4322) + (Integer.parseInt(pagoView.getCapturaMonto())));
+                                            prestamos.setMonto(nuevoMonto);
                                             prestamos.setPagoList(listaComodin);
 
                                             parser.marshall(listaCli,"Clientes.xml");

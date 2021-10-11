@@ -14,10 +14,6 @@ public class VistaListaPrestamo extends JFrame {
 
     JButton boton1, boton2;
 
-    public void displayMessage(String message){
-        JOptionPane.showMessageDialog(this,message);
-    }
-
     public void agregarListener(ActionListener al){
         boton1.addActionListener(al);
         boton2.addActionListener(al);

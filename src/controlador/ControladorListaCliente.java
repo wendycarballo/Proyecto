@@ -4,11 +4,11 @@ import modelo.*;
 import vista.VistaListaCliente;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ControladorListaCliente {
+
     VistaListaCliente listaCView;
 
     public ControladorListaCliente() {
@@ -35,6 +35,8 @@ public class ControladorListaCliente {
             int valor = Integer.parseInt(e.getActionCommand());
             switch (valor){
                 case 1: //prestamos
+                    listaCView.setVisible(false);
+                    new ControladorPrestamo();
 
                     break;
                 case 2: //regresar

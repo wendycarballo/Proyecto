@@ -17,7 +17,6 @@ public class ListaCanton {
         this.cantones = cantones;
     }
 
-    //@XmlElement
     public List<ModeloCanton> getCantones() {
         return cantones;
     }

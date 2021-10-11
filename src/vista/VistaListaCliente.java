@@ -1,12 +1,8 @@
 package vista;
 
-import modelo.JAXBParser;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
 
 public class VistaListaCliente extends JFrame {
     JPanel panelA = new JPanel(new BorderLayout());
@@ -15,10 +11,6 @@ public class VistaListaCliente extends JFrame {
     JPanel panelInfo = new JPanel(new FlowLayout());
 
     JButton boton1, boton2;
-
-    public void displayMessage(String message){
-        JOptionPane.showMessageDialog(this,message);
-    }
 
     public void agregarListener(ActionListener al){
         boton1.addActionListener(al);

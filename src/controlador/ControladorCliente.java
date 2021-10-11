@@ -27,7 +27,6 @@ public class ControladorCliente {
                             JAXBParser parser = new JAXBParser();
                             ListaCliente listaCli = (ListaCliente) parser.unmarshall(new ListaCliente(), "Clientes.xml");
                             ModeloCliente cliente = new ModeloCliente();
-                            boolean found = false;
                             for(ModeloCliente element : listaCli.getListaCliente()){
                                 if (element.getId() == Integer.parseInt(clienteView.getCapturaId())) {
                                     cliente.setId(Integer.parseInt(clienteView.getCapturaId()));
@@ -41,13 +40,8 @@ public class ControladorCliente {
                                     clienteView.setVisible(false);
                                     ControladorListaCliente clc = new ControladorListaCliente();
                                     clc.listaCView.agregaTabla(sp);
-                                    found = true;
                                 }
                             }
-                            if (found != true) {
-                                throw new Exception(" El cliente no se encuentra registrado");
-                            }
-
                         }
                         else{
                             throw new Exception("Error, debe digitar un id");
@@ -74,9 +68,12 @@ public class ControladorCliente {
                         else{
                             throw new Exception("Error, campos en blanco");
                         }
-                        //CAMBIAR
-                        Direccion provisional = new Direccion("DE","FA","ULT");
-                        cliente1.setDireccion(provisional);
+
+                        Direccion ingreso = new Direccion();
+                        ingreso.setProvinciaS(clienteView.getProvincia());
+                        ingreso.setCantonS(clienteView.getCanton());
+                        ingreso.setDistritoS(clienteView.getDistrito());
+                        cliente1.setDireccion(ingreso);
                         ListaPrestamo lp = new ListaPrestamo();
                         cliente1.setPrestamo(lp);
 
